@@ -32,5 +32,17 @@ export class singlyLinkedList{
         this.size++;
         return this;
      }
+     prepend(data){
+        const newNode=new Node(data);
+        let empty=this.isEmpty();
+        if(empty){
+            this.head=newNode;
+        }
+         newNode.next=this.head;
+         this.head=newNode;
+         this.size++;
+         return this;
+        
+     }
 
 }
