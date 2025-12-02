@@ -4,3 +4,9 @@ class Node {
         this.next = null;
     }
 }
+export class singlyLinkedList{
+    constructor(){
+        this.head=null;
+        this.size=0;
+    }
+}
