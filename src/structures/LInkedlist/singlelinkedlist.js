@@ -127,4 +127,14 @@ export class singlyLinkedList{
         this.size--;
         return removedValue;
     }
+    clear(){
+        let empty=this.isEmpty();
+        if(empty){
+            console.log(`the list is empty`);
+            return;
+        }
+        this.head=null;
+        this.size=0;
+        return this;
+    }
 }
