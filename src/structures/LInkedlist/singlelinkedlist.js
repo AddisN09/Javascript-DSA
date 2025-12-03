@@ -174,5 +174,35 @@ export class singlyLinkedList{
         this.head=sorted;
         return this;
     }
-   
+    getMiddle(left,right){
+        let empty=this.isEmpty();
+        if(empty){
+            console.log(`The list is empty`);
+            return;
+        }
+        let fast=this.head;
+        let slow=this.head;
+        while(fast!==right && fast.next!==right){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow;
+    }
+    binarySearchLinkedList(target){
+        let sorted=this.insertionSortLinkedList();
+        let start=this.head, end=null;
+        while(start!==end){
+            let mid=this.getMiddle(start,end);
+            if(mid.data===target){
+                return mid;
+            }
+            else if(mid.data>target){
+                end=mid;
+            }
+            else{
+                start=mid.next;
+            }
+        }
+        return null;
+    }
 }
