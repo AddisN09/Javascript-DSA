@@ -101,5 +101,30 @@ export class singlyLinkedList{
          this.size--;
         return removedValue;
     }
-
+    removeAt(position){
+        let empty=this.isEmpty();
+        if(empty){
+            console.log(`The list is empty nothing to delete`);
+            return;
+        }
+        if(position<1 || position>this.size){
+            console.log(`Invalid input for position`);
+            return;
+        }
+        let temp=this.head;
+        let slow=null;
+        for(let i=1;i<position;i++){
+            slow=temp;
+            temp=temp.next;
+        }
+        if(this.size===1 || position===1){
+                return this.removeFirst();
+            }
+        let removedValue=temp.data;
+        slow.next=temp.next;
+        temp.next=null;
+        temp=null;
+        this.size--;
+        return removedValue;
+    }
 }
