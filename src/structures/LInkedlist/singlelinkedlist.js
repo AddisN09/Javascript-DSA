@@ -224,4 +224,28 @@ export class singlyLinkedList{
         stringDisplay+=`NULL`;
         console.log(stringDisplay);
     }
+    bubbleSortLinkedList(){
+        let empty=this.isEmpty();
+        if(empty){
+            console.log(`The list is empty`);
+            return;
+        }
+        let swapped;
+        do{
+            swapped=false;
+           let fast=this.head.next;
+           let slow=this.head;
+           while(fast){
+            if(fast.data<slow.data){
+                 let temp=slow.data;
+                 slow.data=fast.data;
+                 fast.data=temp;
+                 swapped=true;
+            }
+            slow=slow.next;
+            fast=fast.next;
+           }
+        }while(swapped);
+        return this;
+    }
 }
