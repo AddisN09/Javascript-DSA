@@ -10,4 +10,10 @@ class DoublyLinkedList{
         this.head=null;
         this.size=0;
     }
+    isEmpty(){
+        if(!this.head){
+            return true;
+        }
+        return false;
+    }
 }
