@@ -140,7 +140,7 @@ export class singlyLinkedList {
     size() {
         return this.size;
     }
-    linearSearchLinkedList(target) {
+    linearSearch(target) {
         let temp = this.head;
         while (temp) {
             if (temp.data === target) {
@@ -163,7 +163,7 @@ export class singlyLinkedList {
         temp.next = current;
         return sortedList;
     }
-    insertionSortLinkedList() {
+    insertionSort() {
         let sorted = null;
         let temp = this.head;
         while (temp) {
@@ -188,7 +188,7 @@ export class singlyLinkedList {
         }
         return slow;
     }
-    binarySearchLinkedList(target) {
+    binarySearch(target) {
         let sorted = this.insertionSortLinkedList();
         let start = this.head, end = null;
         while (start !== end) {
@@ -224,7 +224,7 @@ export class singlyLinkedList {
         stringDisplay += `NULL`;
         console.log(stringDisplay);
     }
-    bubbleSortLinkedList() {
+    bubbleSort() {
         let empty = this.isEmpty();
         if (empty) {
             console.log(`The list is empty`);
@@ -248,7 +248,7 @@ export class singlyLinkedList {
         } while (swapped);
         return this;
     }
-    selectionSortLinkedList() {
+    selectionSort() {
         let empty = this.isEmpty();
         if (empty) {
             console.log(`The list is empty`);
@@ -273,7 +273,7 @@ export class singlyLinkedList {
         }
         return this;
     }
-    simpleSortLinkedList(){
+    simpleSort(){
         let empty=this.isEmpty();
         if(empty){
             console.log(`The list is empty`);
