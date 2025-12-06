@@ -33,4 +33,18 @@ export class DoublyLinkedList{
         this.size++;
         return this;
     }
+    prepend(data){
+        const newNode=new Node(data);
+        if(!this.head){
+            this.head=newNode;
+        }
+        else{
+            let temp=this.head;
+            temp.previous=newNode;
+            newNode.next=temp;
+            this.head=newNode;
+        }
+        this.size++;
+        return this;
+    }
 }
