@@ -87,4 +87,23 @@ export class DoublyLinkedList{
         }
         return storeValue;
     }
+    traverseForward(){
+        let valueArray=this.toArray();
+        if(valueArray.length===0){
+            console.log(`The list is empty nothing to display`);
+            return;
+        }
+        else{
+            let display=`NULl<- - - `;
+            valueArray.forEach((item,index)=>{
+                display+=`${item} `;
+                if(index!==valueArray.length-1){
+                    display+=`<= = => `
+                }
+            });
+            display+=` - - ->NULL`;
+            console.log(display);
+
+        }
+    }
 }
