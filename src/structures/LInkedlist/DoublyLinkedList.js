@@ -74,4 +74,17 @@ export class DoublyLinkedList{
       this.size++;
       return this;
     }
+    toArray(){
+        let empty=this.isEmpty();
+        if(empty){
+            return [];
+        }
+        let temp=this.head;
+        let storeValue=[];
+        while(temp){
+            storeValue.push(temp.data);
+            temp=temp.next;
+        }
+        return storeValue;
+    }
 }
