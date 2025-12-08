@@ -27,4 +27,7 @@ export class ArrayStack{
         }
         return this.stack[this.stack.length-1];
     }
+    size(){
+        return this.stack.length;
+    }
 }
