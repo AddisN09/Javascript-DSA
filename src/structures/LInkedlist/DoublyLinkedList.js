@@ -309,4 +309,29 @@ export class DoublyLinkedList {
         }while(swapped);
         return this;
     }
+    selectionSort(){
+        let empty=this.isEmpty();
+        if(empty){
+            console.log(`The list is empty`);
+            return;
+        }
+        let current=this.head;
+        while(current){
+            let min=current;
+            let temp=current.next;
+            while(temp){
+                if(temp.data<min.data){
+                    min=temp;
+                }
+                temp=temp.next;
+            }
+            if(min!==current){
+                let x=current.data;
+                current.data=min.data;
+                min.data=x;
+            }
+            current=current.next;
+        }
+        return this;
+    }
 }
