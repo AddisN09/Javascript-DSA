@@ -258,4 +258,31 @@ export class DoublyLinkedList {
         }
         return this;
     }
+     #getMiddle(start,end){
+        let fast=start;
+        let slow=start;
+        while(fast!==end && fast.next!==end){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow;
+     }
+     binarySearch(target){
+        this.insertionSort();
+        let left=this.head;
+        let right=null;
+        while(left!==right){
+            let mid=this.#getMiddle(left,right);
+            if(mid.data===target){
+                return mid;
+            }
+            else if(mid.data>target){
+                right=mid;
+            }
+            else{
+                left=mid.next;
+            }
+        }
+        return null;
+     }
 }
