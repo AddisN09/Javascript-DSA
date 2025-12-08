@@ -200,7 +200,7 @@ export class DoublyLinkedList {
         return value;
     }
     }
-    size(){
+    length(){
         return this.size;
     }
     linearSearch(target){
@@ -218,10 +218,11 @@ export class DoublyLinkedList {
         }
         return null;
     }
-    insertionSort(){
+    insertionSort(){ 
         let empty=this.isEmpty();
         if(empty){
             console.log(`The list is empty`);
+            return;
         }
         if(!this.head.next){
             return this;
