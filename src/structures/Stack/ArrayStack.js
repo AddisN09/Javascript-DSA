@@ -30,4 +30,7 @@ export class ArrayStack{
     size(){
         return this.stack.length;
     }
+    clear(){
+        return this.stack.length=0;
+    }
 }
