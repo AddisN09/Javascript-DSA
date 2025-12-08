@@ -42,4 +42,14 @@ export class ArrayStack{
             console.log(this.stack[i]);
         }
     }
+    toArray(){
+        if(this.isEmpty()){
+            return [];
+        }
+        let store=[];
+          for(let i=this.stack.length-1;i>=0;i--){
+             store.push(this.stack[i]);
+        }
+        return store;
+    }
 }
